@@ -1,0 +1,8 @@
+{
+  "env": {
+    "DB_USER": "The DB username",
+    "DB_PASSWORD": "The DB password for the given username",
+    "DB_SERVER": "The DB server name or IP address",
+    "DB_NAME": "The DB name"
+  }
+}
