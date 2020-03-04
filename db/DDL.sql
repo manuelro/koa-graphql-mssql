@@ -1,0 +1,45 @@
+USE Library;
+
+DROP TABLE IF EXISTS BooksTopics;
+DROP TABLE IF EXISTS Books;
+DROP TABLE IF EXISTS Topics;
+DROP TABLE IF EXISTS Authors;
+
+DROP INDEX IF EXISTS IX_BooksTopics_Book
+ON BooksTopics;
+DROP INDEX IF EXISTS IX_BooksTopics_Topic
+ON BooksTopics;
+
+CREATE TABLE Authors
+(
+    email VARCHAR(120) PRIMARY KEY,
+    name VARCHAR(60) NOT NULL
+);
+
+CREATE TABLE Books
+(
+    id INT PRIMARY KEY IDENTITY,
+    author VARCHAR(120) NOT NULL REFERENCES Authors(email) ON DELETE CASCADE,
+    title VARCHAR(120) NOT NULL,
+);
+
+CREATE TABLE Topics
+(
+    id INT PRIMARY KEY IDENTITY,
+    label VARCHAR(60) NOT NULL UNIQUE
+);
+
+CREATE TABLE BooksTopics
+(
+    book INT NOT NULL,
+    topic INT NOT NULL,
+    CONSTRAINT FK_BooksTopics_Book FOREIGN KEY (book) REFERENCES Books(id) ON DELETE CASCADE,
+    CONSTRAINT FK_BooksTopics_Topics FOREIGN KEY (topic) REFERENCES Topics(id) ON DELETE CASCADE,
+    CONSTRAINT PK_BooksTopics PRIMARY KEY(book, topic)
+);
+
+CREATE INDEX IX_BooksTopics_Book
+ON BooksTopics(Book);
+
+CREATE INDEX IX_BooksTopics_Topic
+ON BooksTopics(Topic);
