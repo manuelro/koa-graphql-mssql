@@ -1,0 +1,35 @@
+{
+  "name": "rentalo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 8181",
+    "build": "next build",
+    "start": "next start",
+    "storybook": "start-storybook -p 6006 -c .storybook --debug-webpack"
+  },
+  "dependencies": {
+    "@apollo/react-hooks": "^3.1.3",
+    "@zeit/next-css": "^1.0.1",
+    "apollo-boost": "^0.4.7",
+    "classnames": "^2.2.6",
+    "google-maps-react": "^2.0.2",
+    "graphql": "^14.6.0",
+    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "9.1.1",
+    "node-fetch": "^2.6.0",
+    "react": "16.10.2",
+    "react-apollo": "^3.1.3",
+    "react-dom": "16.10.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@storybook/react": "^5.2.8",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^9.1.0",
+    "postcss-preset-env": "^6.7.0",
+    "prop-types": "^15.7.2",
+    "tailwindcss": "^1.1.2"
+  }
+}
